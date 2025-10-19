@@ -1,4 +1,5 @@
-/* Member 3: Dark Elegant Theme */
+
+
 * {
     margin: 0;
     padding: 0;
@@ -6,21 +7,18 @@
 }
 
 body {
-    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
-    color: #e2e8f0;
-    background-color: #0f1419;
-}
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    color: #2d3748;
+    background-color: #ffffff;
+
 
 /* Header Styles */
 header {
-    background: rgba(15, 20, 25, 0.95);
-    backdrop-filter: blur(10px);
+    background-color: #1a365d;
     padding: 1rem 0;
-    border-bottom: 1px solid #2d3748;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    border-bottom: 3px solid #e53e3e;
 }
 
 .navbar {
@@ -35,10 +33,8 @@ header {
 .logo h1 {
     color: #ffffff;
     font-size: 1.8rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-weight: 300;
+    letter-spacing: 1px;
 }
 
 .nav-links {
@@ -50,8 +46,8 @@ header {
 .nav-links a {
     color: #e2e8f0;
     text-decoration: none;
-    padding: 0.7rem 1.2rem;
-    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
     transition: all 0.3s ease;
     font-weight: 500;
     position: relative;
@@ -59,37 +55,26 @@ header {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #667eea;
-    background: rgba(102, 126, 234, 0.1);
-}
-
-.nav-links a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 1.2rem;
-    right: 1.2rem;
-    height: 2px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-color: #e53e3e;
+    transform: translateY(-2px);
 }
 
 /* Main Content */
 main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 3rem 2rem;
     min-height: 80vh;
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #0f1419 0%, #1a202c 50%, #2d3748 100%);
+    background-color: #1a365d;
     color: white;
-    padding: 6rem 2rem;
+    padding: 5rem 2rem;
     text-align: center;
-    border-radius: 16px;
+    border-radius: 0;
     margin-bottom: 4rem;
-    border: 1px solid #2d3748;
     position: relative;
     overflow: hidden;
 }
@@ -178,8 +163,9 @@ main {
 .products-grid,
 .promotions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
+
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
     margin-top: 3rem;
 }
 
@@ -209,8 +195,7 @@ main {
     max-width: 100%;
     height: auto;
     margin-bottom: 1.5rem;
-    border-radius: 12px;
-    filter: brightness(0.9);
+    filter: grayscale(20%);
     transition: filter 0.3s ease;
 }
 
@@ -222,7 +207,7 @@ main {
 .product-card h4,
 .product-item h3,
 .promo-card h3 {
-    color: #ffffff;
+    color: #1a365d;
     margin-bottom: 1rem;
     font-weight: 600;
     font-size: 1.3rem;
@@ -238,19 +223,21 @@ main {
 .view-details,
 .product-card a {
     display: inline-block;
-    background: linear-gradient(135deg, #4fd1c7 0%, #68d391 100%);
-    color: #1a202c;
-    padding: 12px 28px;
+    background-color: #1a365d;
+    color: white;
+    padding: 12px 24px;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 0;
     margin-top: 1.5rem;
     transition: all 0.3s ease;
-    border: none;
-    font-weight: 600;
+    border: 2px solid #1a365d;
+    font-weight: 500;
 }
 
 .view-details:hover,
 .product-card a:hover {
+    background-color: transparent;
+    color: #1a365d;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(104, 211, 145, 0.3);
 }
@@ -273,24 +260,29 @@ body {
 
 /* CONFLICT 2: Different button design */
 .cta-button, .view-details, .buy-button {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-color: #e53e3e;
     color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 16px 40px;
+    border: 2px solid #e53e3e;
+    border-radius: 0;
+    padding: 15px 35px;
     font-weight: 600;
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .cta-button:hover, .view-details:hover, .buy-button:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+    background-color: transparent;
+    color: #e53e3e;
 }
 
-/* CONFLICT 3: Different header approach */
+/* CONFLICT 2: Different layout spacing */
+.product-grid, .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 4rem;
+}
+
+/* CONFLICT 3: Different header background */
 header {
-    background: rgba(26, 32, 44, 0.95);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid #4a5568;
+    background: #2d3748;
+    border-bottom: 4px solid #e53e3e;
 }
